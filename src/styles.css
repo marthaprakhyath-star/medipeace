@@ -1,0 +1,375 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg: var(--mp-bg);
+  --color-surface: var(--mp-surface);
+  --color-card: var(--mp-card);
+  --color-fg: var(--mp-fg);
+  --color-muted: var(--mp-muted);
+  --color-subtle: var(--mp-subtle);
+  --color-accent: var(--mp-accent);
+  --color-accent-fg: var(--mp-accent-fg);
+  --color-lavender: var(--mp-lavender);
+  --color-border: var(--mp-border);
+  --color-ring: var(--mp-accent);
+  --color-glow: var(--mp-glow);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-2xl: 36px;
+
+  --shadow-card: var(--mp-shadow-card);
+}
+
+:root {
+  --mp-bg: #f6f2ec;
+  --mp-surface: #ebe6de;
+  --mp-card: color-mix(in oklab, #fffcf8 84%, transparent);
+  --mp-fg: #1a2330;
+  --mp-muted: #5c6570;
+  --mp-subtle: #8a9199;
+  --mp-accent: #24685c;
+  --mp-accent-fg: #f6f2ec;
+  --mp-lavender: #6f6583;
+  --mp-border: color-mix(in oklab, var(--mp-fg) 10%, transparent);
+  --mp-glow: color-mix(in oklab, var(--mp-accent) 28%, transparent);
+  --mp-shadow-card: 0 18px 40px -24px color-mix(in oklab, var(--mp-fg) 35%, transparent);
+  color-scheme: light;
+}
+
+.dark {
+  --mp-bg: #0d1219;
+  --mp-surface: #151c26;
+  --mp-card: color-mix(in oklab, #1a2330 74%, transparent);
+  --mp-fg: #f2ede6;
+  --mp-muted: #9aa3ad;
+  --mp-subtle: #6e7884;
+  --mp-accent: #6bae9f;
+  --mp-accent-fg: #0d1219;
+  --mp-lavender: #b5a8c7;
+  --mp-border: color-mix(in oklab, var(--mp-fg) 12%, transparent);
+  --mp-glow: color-mix(in oklab, var(--mp-accent) 22%, transparent);
+  --mp-shadow-card: 0 22px 48px -28px rgb(0 0 0 / 0.55);
+  color-scheme: dark;
+}
+
+.session-screen {
+  --mp-bg: #0b1017;
+  --mp-surface: #141b24;
+  --mp-card: color-mix(in oklab, #1a2330 78%, transparent);
+  --mp-fg: #f2ede6;
+  --mp-muted: #b0b8c2;
+  --mp-subtle: #7b8490;
+  --mp-accent: #7ec4b4;
+  --mp-accent-fg: #0b1017;
+  --mp-lavender: #c3b7d4;
+  --mp-border: color-mix(in oklab, var(--mp-fg) 12%, transparent);
+  --mp-glow: rgb(126 196 180 / 0.22);
+  color-scheme: dark;
+  overscroll-behavior: none;
+}
+
+.completion-screen {
+  --mp-bg: #f3ece2;
+  --mp-surface: #e9e0d2;
+  --mp-card: color-mix(in oklab, #fbf6ee 88%, transparent);
+  --mp-fg: #2a241c;
+  --mp-muted: #6a6156;
+  --mp-subtle: #91867a;
+  --mp-accent: #2f6b45;
+  --mp-accent-fg: #fbf6ee;
+  --mp-lavender: #8a7468;
+  --mp-border: color-mix(in oklab, var(--mp-fg) 10%, transparent);
+  --mp-glow: color-mix(in oklab, var(--mp-accent) 28%, transparent);
+  color-scheme: light;
+}
+
+html.look-dawn {
+  --mp-bg: #f3ece2;
+  --mp-surface: #e9e0d2;
+  --mp-card: color-mix(in oklab, #fbf6ee 84%, transparent);
+  --mp-fg: #2a241c;
+  --mp-muted: #6a6156;
+  --mp-subtle: #91867a;
+  --mp-accent: #b56b3a;
+  --mp-accent-fg: #fbf6ee;
+  --mp-lavender: #8a7468;
+  color-scheme: light;
+}
+
+html.look-dawn.dark {
+  --mp-bg: #1a1612;
+  --mp-surface: #241f19;
+  --mp-card: color-mix(in oklab, #2c261f 74%, transparent);
+  --mp-fg: #f3ece2;
+  --mp-muted: #b4a898;
+  --mp-subtle: #7e7468;
+  --mp-accent: #d4925e;
+  --mp-accent-fg: #1a1612;
+  --mp-lavender: #c4a090;
+  color-scheme: dark;
+}
+
+html.look-zen {
+  --mp-bg: #f1e8dc;
+  --mp-surface: #e6d9c8;
+  --mp-card: color-mix(in oklab, #f7f1e8 84%, transparent);
+  --mp-fg: #2c2823;
+  --mp-muted: #6b6258;
+  --mp-subtle: #94897c;
+  --mp-accent: #6b5344;
+  --mp-accent-fg: #f7f1e8;
+  --mp-lavender: #a89078;
+  color-scheme: light;
+}
+
+html.look-zen.dark {
+  --mp-bg: #1a1612;
+  --mp-surface: #241e18;
+  --mp-card: color-mix(in oklab, #2c261f 74%, transparent);
+  --mp-fg: #f1e8dc;
+  --mp-muted: #b4a898;
+  --mp-subtle: #7e7468;
+  --mp-accent: #c4a882;
+  --mp-accent-fg: #1a1612;
+  --mp-lavender: #c4b098;
+  color-scheme: dark;
+}
+
+html.look-forest {
+  --mp-bg: #0c1510;
+  --mp-surface: #152019;
+  --mp-card: color-mix(in oklab, #1c2a22 74%, transparent);
+  --mp-fg: #e8f0e8;
+  --mp-muted: #9ab09e;
+  --mp-subtle: #6d8274;
+  --mp-accent: #8fbf9a;
+  --mp-accent-fg: #0c1510;
+  --mp-lavender: #a3b8a8;
+  color-scheme: dark;
+}
+
+html.look-forest:not(.dark) {
+  --mp-bg: #e8efe8;
+  --mp-surface: #dce6dc;
+  --mp-card: color-mix(in oklab, #f3f7f3 84%, transparent);
+  --mp-fg: #1a261c;
+  --mp-muted: #5a6e5e;
+  --mp-subtle: #849288;
+  --mp-accent: #2f6b45;
+  --mp-accent-fg: #f3f7f3;
+  --mp-lavender: #6d7f70;
+  color-scheme: light;
+}
+
+html.look-moonlit {
+  --mp-bg: #0b141f;
+  --mp-surface: #15202c;
+  --mp-card: color-mix(in oklab, #1c2a3a 74%, transparent);
+  --mp-fg: #eef3f7;
+  --mp-muted: #9aa8b6;
+  --mp-subtle: #6e7c8a;
+  --mp-accent: #7eb8b0;
+  --mp-accent-fg: #0b141f;
+  --mp-lavender: #9bb0c8;
+  color-scheme: dark;
+}
+
+html.look-moonlit:not(.dark) {
+  --mp-bg: #e8eef4;
+  --mp-surface: #dce5ee;
+  --mp-card: color-mix(in oklab, #f4f7fa 84%, transparent);
+  --mp-fg: #1a2430;
+  --mp-muted: #5c6a78;
+  --mp-subtle: #8894a0;
+  --mp-accent: #2f6f68;
+  --mp-accent-fg: #f4f7fa;
+  --mp-lavender: #6f7f93;
+  color-scheme: light;
+}
+
+.look-veil {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--mp-bg) 38%, transparent) 0%,
+    color-mix(in oklab, var(--mp-bg) 72%, transparent) 40%,
+    color-mix(in oklab, var(--mp-bg) 88%, transparent) 100%
+  );
+}
+
+html.dark .look-veil {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--mp-bg) 26%, transparent) 0%,
+    color-mix(in oklab, var(--mp-bg) 62%, transparent) 42%,
+    color-mix(in oklab, var(--mp-bg) 84%, transparent) 100%
+  );
+}
+
+.mood-calm {
+  background: color-mix(in oklab, var(--mp-accent) 20%, var(--mp-card));
+  color: var(--mp-accent);
+}
+.mood-focus {
+  background: color-mix(in oklab, var(--mp-lavender) 24%, var(--mp-card));
+  color: var(--mp-accent);
+}
+.mood-sleep {
+  background: color-mix(in oklab, var(--mp-lavender) 34%, var(--mp-surface));
+  color: var(--mp-lavender);
+}
+.mood-relax {
+  background: color-mix(in oklab, var(--mp-accent) 30%, var(--mp-card));
+  color: var(--mp-accent);
+}
+.mood-breathe {
+  background: color-mix(in oklab, var(--mp-accent) 14%, var(--mp-surface));
+  color: var(--mp-accent);
+}
+
+.preset-a {
+  background: color-mix(in oklab, var(--mp-lavender) 18%, var(--mp-card));
+}
+.preset-b {
+  background: color-mix(in oklab, var(--mp-accent) 14%, var(--mp-card));
+}
+.preset-c {
+  background: color-mix(in oklab, var(--mp-accent) 26%, var(--mp-card));
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior: none;
+    scroll-padding-top: 1.25rem;
+    scroll-padding-bottom: 7rem;
+  }
+
+  body {
+    background: var(--mp-bg);
+    color: var(--mp-fg);
+    font-family: var(--font-sans);
+    min-height: 100dvh;
+    overscroll-behavior: none;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--mp-accent);
+    outline-offset: 3px;
+  }
+}
+
+.bg-card {
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.page-enter > * {
+  animation: rise-in var(--enter-duration, 420ms) cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.page-enter > *:nth-child(1) {
+  animation-delay: 0ms;
+}
+.page-enter > *:nth-child(2) {
+  animation-delay: 50ms;
+}
+.page-enter > *:nth-child(3) {
+  animation-delay: 100ms;
+}
+.page-enter > *:nth-child(4) {
+  animation-delay: 150ms;
+}
+.page-enter > *:nth-child(5) {
+  animation-delay: 200ms;
+}
+.page-enter > *:nth-child(6) {
+  animation-delay: 250ms;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes breath-glow {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes completion-glow {
+  0% {
+    opacity: 0.55;
+    transform: scale(0.72);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.55);
+  }
+}
+
+.breath-halo {
+  animation: breath-glow 8s ease-in-out infinite;
+}
+
+.completion-halo {
+  animation: completion-glow 2.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.reduce-motion .page-enter > *,
+.reduce-motion .breath-halo,
+.reduce-motion .completion-halo {
+  animation: none !important;
+  filter: none !important;
+  transform: none !important;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter > *,
+  .breath-halo,
+  .completion-halo {
+    animation: none !important;
+    filter: none !important;
+    transform: none !important;
+    opacity: 1;
+  }
+}
